@@ -23,12 +23,11 @@ function getRandomIntInclusive(min, max) {
 function iniciarJogo() {
     var btn_iniciar = document.getElementById("button-iniciar")
     var div_jogo = document.getElementById("div-jogo")
-
     console.log(palavraEscolhida.join(''))
     console.log(palavraEmbaralhada.join(''))
 
-
     btn_iniciar.style.display = "none"
+    div_jogo.removeAttribute("hidden")
     div_jogo.style.display = "block"
     criarEspacos(palavraEscolhida)
 }
@@ -77,8 +76,11 @@ function criarEspacos(palavraEmbaralhada) {
     let ul = document.getElementById('sortable');
 
     for (let i = 0; i < palavraEmbaralhada.length; i++) {
-        var liNovo = document.createElement("li")
-        ul.append(Object.assign(liNovo, {textContent: palavraEmbaralhada[i]}));
+        var div = document.createElement("div");
+        div.classList.add("btn");
+        div.classList.add("btn-outline-secondary");
+
+        ul.append(Object.assign(div, {textContent: palavraEmbaralhada[i]}));
     }   
 
 }
