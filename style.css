@@ -1,28 +1,71 @@
 ul { 
     list-style-type: none; margin: 0; padding: 0 !important; margin-bottom: 10px; 
 }
+
 span { 
     margin: 5px; padding: 5px; width: 150px; 
     border: 10px;
 }
-#game-container {
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center
 }
+
 #button-verificar {
     margin: 10px;
 }
+
 .btn {
     margin-inline: 5px;
 }
+
 .card-body {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 35rem;
-    height: 35rem;
+}
+
+
+@media (max-width: 1024px) {
+    .card {
+        min-width: 95% !important;
+        min-height: 50% !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .card {
+        min-width: 50% !important;
+        min-height: 50% !important;
+    }
+}
+
+body {
+    background-image: url("Background.png");
+}
+
+#game-container {
+    background-position: 50%;
+    background-image: url("Fundo\ jogo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#container-infos {
+    flex-direction: column !important;
+}
+
+h2 {
+    font-size: medium !important;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
 }

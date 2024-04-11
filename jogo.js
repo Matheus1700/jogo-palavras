@@ -24,6 +24,7 @@ const dicas = [
     "Material de escrita", "Material de escrita"
 ];
     
+const audioContext = new AudioContext();
 
 document.addEventListener("DOMContentLoaded", function() {
     let btn_iniciar = document.getElementById("button-iniciar");
@@ -71,6 +72,17 @@ function iniciarJogo() {
     criarEspacos(palavraEmbaralhada);
 }
 
+
+function playAudio(audioBuffer) {
+    const audioSource = audioContext.createBufferSource();
+    audioSource.buffer = audioBuffer;
+    audioSource.loop = false;
+    audioSource.volume = 1;
+    audioSource.connect(audioContext.destination);
+    audioSource.start();
+}
+
+
 function verificarResultado() {
     let navbar = document.getElementById("sortable").querySelectorAll("div");
 
@@ -84,10 +96,32 @@ function verificarResultado() {
         placar++;
         document.getElementById("valor-placar").innerText = placar;
 
+        fetch('correto.mp3')
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+        .then(audioBuffer => {
+            playAudio(audioBuffer);
+        })
+        .catch(error => {
+            console.error('Error loading audio:', error);
+        });
+
         iniciarJogo();
     } else {
         console.log("DIF");
-        alert("Resposta incorreta!");
+
+        fetch('errado.mp3')
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+        .then(audioBuffer => {
+            playAudio(audioBuffer);
+            alert("Resposta incorreta!");
+        })
+        .catch(error => {
+            console.error('Error loading audio:', error);
+        });
+
+
     }
 
 }
