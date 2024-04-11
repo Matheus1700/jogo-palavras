@@ -18,3 +18,11 @@ span {
 .btn {
     margin-inline: 5px;
 }
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 35rem;
+    height: 35rem;
+}
