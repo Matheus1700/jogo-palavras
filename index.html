@@ -30,11 +30,13 @@
 
     <div id="div-jogo" hidden>
       <div id="placar">
-        <h1 class="text-primary">0</h1>
+        <h1 class="text-primary" id="valor-placar">0</h1>
       </div>
       <ul id="sortable"></ul>
       <div>
         <button class="btn btn-primary" id="button-verificar" onclick="verificarResultado()">Verificar</button>
+        <button class="btn btn-secondary" id="pula-palavra" onclick="pularPalavra()">Pular Palavra</button>
+        <button class="btn btn-secondary" id="mostrar-dica" onclick="mostrarDica()">Mostrar Dica</button>
       </div>
 
     </div>
