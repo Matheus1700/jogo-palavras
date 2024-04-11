@@ -72,11 +72,11 @@ function iniciarJogo() {
 }
 
 function verificarResultado() {
-    let navbar = document.getElementById("sortable").querySelectorAll("li");
+    let navbar = document.getElementById("sortable").querySelectorAll("div");
 
     result = "";
-    navbar.forEach(li => {
-        result += li.innerText;
+    navbar.forEach(div => {
+        result += div.innerText;
     });
 
     if (result == palavraEscolhida.join('')) {
