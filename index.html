@@ -24,14 +24,16 @@
 </head>
 <body>
     <div id="placar">
-        <h1>0</h1>
+        <h1 id="valor-placar">0</h1>
     </div>
     <button id="button-iniciar" onclick="iniciarJogo()">Iniciar</button>
 
 
-    <div id="div-jogo" hidden>
+    <div id="div-jogo" style="display: none;">
         <ul id="sortable"></ul>
         <button id="button-verificar" onclick="verificarResultado()">Verificar</button>
+        <button id="pula-palavra" onclick="pularPalavra()">Pular Palavra</button>
+        <button id="mostrar-dica" onclick="mostrarDica()">Mostrar Dica</button>
     </div>
 
 </body>
