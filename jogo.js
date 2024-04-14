@@ -54,8 +54,8 @@ function getRandomIntInclusive(min, max) {
 
 
 function iniciarJogo() {
-    let btn_iniciar = document.getElementById("button-iniciar");
-    btn_iniciar.style.display = "none"; 
+    let intro = document.getElementById("div-intro-jogo");
+    intro.style.display = "none"; 
 
     let div_jogo = document.getElementById("div-jogo");
     div_jogo.removeAttribute("hidden")

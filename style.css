@@ -29,7 +29,17 @@ span {
     align-items: center;
     text-align: center;
 }
+.jogo {
+    background-position: 50%;
+    background-image: url("Imagem\ jogo.png");
+    background-size: 100%;
+    background-repeat: repeat;
+}
 
+#div-intro-jogo{
+    display: flex;
+    flex-direction: column;
+}
 
 @media (max-width: 1024px) {
     .card {
